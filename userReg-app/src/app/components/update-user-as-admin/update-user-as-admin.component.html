@@ -1,0 +1,52 @@
+<div class="bootstrap-wrapper">
+    <div class="container mt">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h1 class="text-center" >Update</h1>
+                <form (ngSubmit)="doupdate()">
+                    
+                    <!-- <div class="form-outline mb-4">
+                        <input type="text" id="firstname" class="form-control" name="firstname" #firstname="ngModel" [(ngModel)]="user.firstName" required />
+                        <label class="form-label" for="firstname">First Name</label>
+                    </div>
+                    <div class="form-outline mb-4">
+                        <input type="text" id="lastname" class="form-control" #lastname="ngModel" name="lastname" [(ngModel)]="user.lastName" required/>
+                        <label class="form-label" for="lastname">Last Name</label>
+                    </div>
+
+                    <div *ngIf=tooglebutton class="form-outline mb-4">
+                        <input type="text" id="name" class="form-control" name="role" [(ngModel)]="user.role" #name="ngModel" required />
+                        <label class="form-label" for="role">Role</label>
+                    </div> -->
+                
+                <div class="form-outline mb-4">
+                  <input type="text" required id="firstName" class="form-control form-control-lg" placeholder="First Name"
+                    [(ngModel)]="user.firstName" name="firstName">
+                </div>
+      
+                <div class="form-outline mb-4">
+                  <input type="text" required id="lastName" class="form-control form-control-lg" placeholder="Last Name"
+                    [(ngModel)]="user.lastName" name="lastName" />
+                </div>
+
+                <div class="form-outline mb-4">
+                    <input type="text" required id="role" class="form-control form-control-lg" placeholder="Role"
+                      [(ngModel)]="user.role" name="role" />
+                  </div>
+      
+
+                    
+
+                   
+                    <button type="submit" class="btn btn-primary btn-block" (click)="doupdate()">Update</button>&nbsp;
+
+                    <button routerLink="/admin-home" class="btn btn-secondary btn-block">Home</button>
+                    <br>
+                    <br>
+                    
+                </form>
+               
+            </div>
+        </div>
+    </div>
+</div>

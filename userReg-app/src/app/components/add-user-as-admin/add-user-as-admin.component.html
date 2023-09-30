@@ -1,0 +1,51 @@
+<div class="bootstrap-wrapper">
+    <div class="container mt">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h1 class="text-center">Add User</h1>
+                <form (ngSubmit)="adduser()">
+
+                    <div class="form-group">
+
+                        <div class="form-outline mb-4">
+                            <input type="text" required id="userName" class="form-control form-control-lg"
+                                placeholder="User Name" [(ngModel)]="user.userName" name="userName">
+
+                        </div>
+                        <div class="form-outline mb-4">
+                            <input type="text" required id="firstName" class="form-control form-control-lg"
+                                placeholder="First Name" [(ngModel)]="user.firstName" name="firstName">
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <input type="text" required id="lastName" class="form-control form-control-lg"
+                                placeholder="Last Name" [(ngModel)]="user.lastName" name="lastName" />
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <input type="text" required id="email" class="form-control form-control-lg"
+                                placeholder="Email ID" [(ngModel)]="user.email" name="email" />
+                        </div>
+                        <div class="form-outline mb-4">
+                            <input type="password" required id="password" class="form-control form-control-lg" placeholder="Password"
+                              [(ngModel)]="user.password" name="password">
+                        </div>
+                        <div class="form-outline mb-4">
+                            <input type="text" required id="role" *ngIf="toggle" class="form-control form-control-lg" placeholder="Role"
+                              [(ngModel)]="user.role" name="role">
+                        </div>
+
+
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block" (click)="adduser()">Add</button>&nbsp;
+
+                    <button  class="btn btn-secondary btn-block">Home</button>
+                    <br>
+                    <br>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+<div class="bootstrap-wrapper">
+    <div class="container mt">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h1 class="text-center" >Update</h1>
+                <form (ngSubmit)="doupdate()">
+                    
+                    
+                    <div class="form-outline mb-4">
+                        <input type="text" id="firstname" class="form-control" name="firstname" #firstname="ngModel" [(ngModel)]="user.firstName" placeholder="First Name" required />
+                    </div>
+                    <div class="form-outline mb-4">
+                        <input type="text" id="lastname" class="form-control" #lastname="ngModel" name="lastname" [(ngModel)]="user.lastName" placeholder="Last Name" required/>
+                    </div>
+
+
+
+                    
+
+                   
+                    <button type="submit" class="btn btn-primary " (click)="doupdate()">Update</button>&nbsp;
+
+                    <button routerLink="/user-home" class="btn btn-secondary ">Home</button>
+                    <br>
+                    <br>
+                    
+                </form>
+               
+            </div>
+        </div>
+    </div>
+</div>

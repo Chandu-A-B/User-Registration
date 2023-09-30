@@ -1,0 +1,41 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<app-header></app-header>
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+
+    <!-- Login Form -->
+    <div class="card-body p-md-5 text-black">  
+        <h3 class="mb-5 text-uppercase"> LogIn </h3>  
+        <form #loginform="ngForm" (ngSubmit)="loginUser()">
+            
+          <h2>{{msg}}</h2>
+          <div class="form-group">
+            <div class="form-outline mb-4">  
+              <input type="text" required id="userName" class="form-control form-control-lg" 
+              placeholder="User Name" [(ngModel)]="user.userName" name="userName" ng-required="true"/>  
+              
+            </div>  
+            <div class="form-outline mb-4">  
+              <input type="password" required id="pwd" class="form-control form-control-lg" 
+              placeholder="Password" [(ngModel)]="user.password" name="password" ng-re/>  
+              
+            </div>  
+            
+            <div >
+              <button type="button" [disabled]="loginform.form.invalid" class="btn1" (click)="loginUser()"> Log In </button>
+              <button type="button" routerLink="/register" class="btn2">New user? Sign Up</button>&nbsp;
+              <button type="reset" value="reset" class="btn btn-warning btn-lg"> Reset all </button>  
+                
+            </div>  
+          </div>
+        </form>
+      </div>  
+
+  </div>
+</div>
+

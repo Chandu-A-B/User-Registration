@@ -1,0 +1,53 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<app-header></app-header>
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Login Form -->
+    <div class="card-body p-md-5 text-black">
+      <h3 class="mb-5 text-uppercase"> Register</h3>
+      <form #registrationform="ngForm" (ngSubmit)="register()">
+
+        <h2>{{msg}}</h2>
+        <div class="form-group">
+
+          <div class="form-outline mb-4">
+            <input type="text" required id="userName" class="form-control form-control-lg" placeholder="User Name"
+              [(ngModel)]="user.userName" name="userName">
+
+          </div>
+          <div class="form-outline mb-4">
+            <input type="text" required id="firstName" class="form-control form-control-lg" placeholder="First Name"
+              [(ngModel)]="user.firstName" name="firstName">
+          </div>
+
+          <div class="form-outline mb-4">
+            <input type="text" required id="lastName" class="form-control form-control-lg" placeholder="Last Name"
+              [(ngModel)]="user.lastName" name="lastName" />
+          </div>
+
+          <div class="form-outline mb-4">
+            <input type="text" required id="email" class="form-control form-control-lg" placeholder="Email ID"
+              [(ngModel)]="user.email" name="email" />
+          </div>
+
+          <div class="form-outline mb-4">
+            <input type="password" required id="password" class="form-control form-control-lg" placeholder="Password"
+              [(ngModel)]="user.password" name="password">
+          </div>
+
+          <div>
+            <button type="button" [disabled]="registrationform.form.invalid" (click)="register()" class="btn1"> Register</button><br>
+            <button type="button" routerLink="/login" class="btn2" role="button">Already registered? LogIn</button>&nbsp;
+            <button type="reset" value="reset" class="btn btn-warning btn-lg"> Reset all </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+

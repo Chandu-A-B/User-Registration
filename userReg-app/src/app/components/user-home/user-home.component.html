@@ -1,0 +1,39 @@
+<app-header></app-header>
+<h3>WELCOME, {{currUser}}</h3>
+
+<div>
+    <!-- <button type="button" class="btn btn-warning" (click)="getUsers()"> View All Users</button> &nbsp; -->
+    <button type="button" class="btn btn-success" routerLink="/add-user"> Add user</button>&nbsp;
+    <button type="button" class="btn btn-info" routerLink="/view-details">View Profile</button>&nbsp;
+
+    <button type="button" class="btn btn-danger" (click)="  logout()" routerLink="/">Log Out</button>
+
+</div>
+
+
+<!-- <div *ngIf="datatooggle"> -->
+<div>
+    <h2>User List</h2>
+<table class="table table-striped">
+
+    <thead>
+        <tr>
+            <th>User Name</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email Id</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let use of users">
+            <td>{{use.userName}}</td>
+            <td>{{use.firstName}}</td>
+            <td>{{use.lastName}}</td>
+            <td>{{use.email}}</td>
+           
+        </tr>
+    
+    </tbody>
+</table>
+    
