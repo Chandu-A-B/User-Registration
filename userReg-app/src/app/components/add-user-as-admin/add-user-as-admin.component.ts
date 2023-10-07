@@ -17,7 +17,6 @@ export class AddUserAsAdminComponent implements OnInit {
   constructor(private regserv:ServiceService,private router:Router) { }
 
   ngOnInit(): void {
-
   }
 
 
@@ -26,7 +25,8 @@ export class AddUserAsAdminComponent implements OnInit {
     console.log(localStorage.getItem("role"))
     if(localStorage.getItem("role") !== "admin"){
       
-    this.user.role="user"    
+    this.user.role="user"
+    this.toggle=false
 
   }
     

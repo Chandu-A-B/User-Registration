@@ -16,7 +16,7 @@ export class ServiceService {
   }
   
   public registerUserFromRemote(user:User):Observable<any>{
-    return this.http.post<any>('http://localhost:8081/api/v1/kafka/add',user);
+    return this.http.post<any>('http://localhost:8080/api/v1/kafka/add',user);
   }
 
   public getUserByIdFromRemote(name:string):Observable<any>{

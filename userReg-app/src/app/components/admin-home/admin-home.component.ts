@@ -17,7 +17,6 @@ export class AdminHomeComponent implements OnInit {
   constructor(private userService:ServiceService, private router: Router) { }
 
   ngOnInit(): void {
-    
     this.userService.getAllUsersFromRemote().subscribe(data =>{
       this.users = data;
       // this.datatooggle=true

@@ -42,7 +42,9 @@ export class LoginComponent implements OnInit {
             }
           }, error => {console.log("error in get id role");}
         )
-      })
+      },error=> {console.log(error);
+        this.msg="Incorrect credentials !!";}
+      )
     }
 }
     
