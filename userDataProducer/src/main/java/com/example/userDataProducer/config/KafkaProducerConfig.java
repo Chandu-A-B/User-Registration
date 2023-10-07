@@ -22,15 +22,15 @@ public class KafkaProducerConfig {
 	@Bean
 	public ProducerFactory<String,User> setConfig(){
 		
-		HashMap<String,Object> ed=new HashMap();
-		ed.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, Constants.host);
-		ed.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG,StringSerializer.class);
-		ed.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG,JsonSerializer.class);
-		return new DefaultKafkaProducerFactory<>(ed);
+		HashMap<String,Object> con=new HashMap();
+		con.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, Constants.host);
+		con.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG,StringSerializer.class);
+		con.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG,JsonSerializer.class);
+		return new DefaultKafkaProducerFactory<>(con);
 	}
 	
 	@Bean
-	public KafkaTemplate<String,User> ss(){
+	public KafkaTemplate<String,User> kt(){
 		return new KafkaTemplate<String,User>(setConfig());
 	}
 
