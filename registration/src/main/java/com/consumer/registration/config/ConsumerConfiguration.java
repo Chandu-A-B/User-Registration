@@ -18,19 +18,19 @@ public class ConsumerConfiguration {
 
 	@Bean
 	public ConsumerFactory<String,User> consumerFactory() {
-		HashMap<String,Object> dsad=new HashMap();
-		dsad.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG,Constants.host);
-		dsad.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
-		dsad.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG,JsonDeserializer.class);
-		return new DefaultKafkaConsumerFactory<>(dsad);
+		HashMap<String,Object> consume=new HashMap();
+		consume.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG,Constants.host);
+		consume.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
+		consume.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG,JsonDeserializer.class);
+		return new DefaultKafkaConsumerFactory<>(consume);
 		
 		
 	}
 	
 	@Bean
 	public ConcurrentKafkaListenerContainerFactory concurrentKafkaListenerContainerFactory() {
-		ConcurrentKafkaListenerContainerFactory eew=new ConcurrentKafkaListenerContainerFactory();
-		eew.setConsumerFactory(consumerFactory());
-		return eew;
+		ConcurrentKafkaListenerContainerFactory cklcf=new ConcurrentKafkaListenerContainerFactory();
+		cklcf.setConsumerFactory(consumerFactory());
+		return cklcf;
 	}
 }

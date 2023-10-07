@@ -45,12 +45,6 @@ public class Controller {
 	@Autowired
 	private AuthenticationManager authenticationManager;
 	
-	
-//	@GetMapping("/hello")
-//    public String hello() {
-//        return "hello world!";
-//    }
-
 
     @PostMapping("/login")
     public ResponseEntity<String> login(@RequestBody UserCredentials user) throws Exception{
@@ -73,7 +67,6 @@ public class Controller {
     }
 
     @PatchMapping("/edit/{name}")
-//    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     public ResponseEntity<User> UpdateFindById(@RequestBody User user,@PathVariable String name){
         User use=userRepo.findById(name).get();
         use.setEmail(user.getEmail());
@@ -94,7 +87,6 @@ public class Controller {
     
 
     @GetMapping("/all")
-//	@PreAuthorize("hasAuthority('ROLE_ADMIN')")
     public ResponseEntity<List<User>> FindAll(){
         return ResponseEntity.status(HttpStatus.OK).body(userRepo.findAll());
     }
